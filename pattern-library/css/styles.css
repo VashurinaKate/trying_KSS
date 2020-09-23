@@ -1,0 +1,214 @@
+@charset "UTF-8";
+/*
+Buttons
+
+Кнопки
+
+Markup:
+<a href="" class="btn">Button</a>
+
+Styliguide Buttons
+*/
+.btn {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 45px;
+  margin: 10px 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #2EE59D;
+  box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
+  color: white;
+  transform: translateY(-7px);
+}
+
+/*
+Menu
+
+Красивое меню
+
+Markup:
+<nav class="menu" id="main-menu">
+        <button class="menu-toggle" id="toggle-menu"></button>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li class="drop-link"><a href="#">About us</a>
+                    <div class="menu-dropdown">
+                        <ul class="submenu">
+                            <li><a href="#">something</a></li>
+                            <li><a href="#">something</a></li>
+                            <li><a href="#">something</a></li>
+                            <li><a href="#">something</a></li>
+                            <li><a href="#">something</a></li>
+                            <li><a href="#">something</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+    </nav>
+
+Styleguide Menu
+*/
+nav {
+  float: right;
+}
+
+.nav-menu, .submenu {
+  list-style-type: none;
+  background-color: rgba(70, 77, 83, 0.308);
+  border-radius: 4px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu > li {
+  border-right: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+}
+
+.nav-menu > li > a {
+  text-transform: uppercase;
+  line-height: 70px;
+  padding: 0 20px 0 20px;
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+a:hover {
+  color: #efefef;
+  border-radius: 4px;
+}
+
+a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4px;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #333333;
+  z-index: -1;
+  transition: all 0.1s cubic-bezier(0, 0.59, 1, 0.26);
+}
+
+.nav-menu > li > a:hover:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #333333;
+  z-index: -1;
+}
+
+/* ---- DROPDOWN---*/
+.drop-link {
+  position: relative;
+}
+
+.drop-link::after {
+  content: "▼";
+  position: absolute;
+  bottom: 0.2em;
+  left: 4.7em;
+  color: white;
+  font-size: 0.7em;
+}
+
+.menu-dropdown {
+  position: absolute;
+  display: none;
+  margin-top: 1px;
+}
+
+.submenu {
+  min-width: 100px;
+  padding: 10px;
+}
+
+.drop-link:hover .menu-dropdown {
+  display: block;
+}
+
+.submenu > li > a:hover {
+  background: #333333;
+  transition: 200ms;
+}
+
+/*----TOGGLE----*/
+/*
+Toggle-menu
+
+Гамбургер для раскрытия меню
+
+Markup:
+<button class="menu-toggle" id="toggle-menu"></button>
+
+Styliguide Toggle-menu
+*/
+@media screen and (max-width: 700px) {
+  .menu-toggle {
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
+    display: block;
+    font-size: 3em;
+    width: 1em;
+    height: 1em;
+    line-height: 0.4;
+    white-space: nowrap;
+  }
+
+  .menu-toggle::after {
+    content: "≡";
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0;
+  }
+
+  .menu.is-open .nav-menu {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

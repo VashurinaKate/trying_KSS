@@ -1,0 +1,46 @@
+/*
+Toggle-menu
+
+Гамбургер для раскрытия меню
+
+Markup:
+<button class="menu-toggle" id="toggle-menu"></button>
+
+Styliguide Toggle-menu
+*/
+
+@media screen and (max-width: 700px) {
+    
+    .menu-toggle {
+        border: 0;
+        cursor: pointer;
+        background-color: transparent;
+        display: block;
+        font-size: 3em;
+        width: 1em;
+        height: 1em;
+        line-height: 0.4;
+        white-space: nowrap;
+    }
+    
+    .menu-toggle::after {
+   
+        content: "\2261";
+    
+    }
+    .nav-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 0;
+    }
+    
+    .menu.is-open .nav-menu {
+        display: block;
+    }
+
+    .nav-menu {
+        
+    }
+}
